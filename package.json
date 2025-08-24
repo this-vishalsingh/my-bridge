@@ -1,0 +1,40 @@
+{
+    "scripts": {
+        "lint:fix": "prettier */*.js \"*/**/*{.js,.ts}\" -w",
+        "lint": "prettier */*.js \"*/**/*{.js,.ts}\" --check",
+        "initialize": "ts-node ./scripts/devnet/initialize.ts",
+        "add-token-solana": "solana-keygen new -f -o ./keys/devnet/solana_fee_vault.json && ts-node ./scripts/devnet/solana/add_token_solana.ts",
+        "add-token-solayer": "solana-keygen new -f -o ./keys/devnet/solayer_fee_vault.json && ts-node ./scripts/devnet/solayer/add_token_solayer.ts",
+        "add-guardian": "ts-node ./scripts/devnet/solayer/add_guardian.ts",
+        "remove-guardian": "ts-node ./scripts/devnet/solana/remove_guardian.ts",
+        "bridge-asset-source-chain": "ts-node ./scripts/devnet/solana/bridge_asset_source_chain.ts",
+        "bridge-asset-target-chain": "ts-node ./scripts/devnet/solayer/bridge_asset_target_chain.ts",
+        "bridge-message-source-chain": "ts-node ./scripts/devnet/solana/solana/bridge_message_source_chain.ts",
+        "bridge-message-target-chain": "ts-node ./scripts/devnet/solayer/bridge_message_target_chain.ts",
+        "verify-signature": "ts-node ./scripts/devnet/solayer/verify_signature.ts",
+        "update-guardian-threshold": "ts-node ./scripts/devnet/solayer/update_guardian_threshold.ts",
+        "pause-token": "ts-node ./scripts/devnet/solana/pause_token.ts",
+        "unpause-token": "ts-node ./scripts/devnet/solayer/unpause_token.ts"
+    },
+    "dependencies": {
+        "@coral-xyz/anchor": "^0.29.0",
+        "@metaplex-foundation/mpl-token-metadata": "^2.13.0",
+        "@noble/ed25519": "^1.6.0",
+        "@solana/buffer-layout": "^4.0.1",
+        "@solana/spl-token": "0.4.6",
+        "@solana/web3.js": "1.91.8",
+        "borsh": "^2.0.0",
+        "bs58": "^6.0.0",
+        "rpc-websockets": "7.11.0"
+    },
+    "devDependencies": {
+        "@types/bn.js": "^5.1.0",
+        "@types/chai": "^4.3.0",
+        "@types/mocha": "^9.0.0",
+        "chai": "^4.3.4",
+        "mocha": "^9.0.3",
+        "prettier": "^2.6.2",
+        "ts-mocha": "^10.0.0",
+        "typescript": "^4.3.5"
+    }
+}

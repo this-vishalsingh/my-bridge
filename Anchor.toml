@@ -1,0 +1,18 @@
+[toolchain]
+
+[features]
+seeds = false
+skip-lint = false
+
+[programs.localnet]
+bridge_program = "6kpxYKjqe8z66hnDHbbjhEUxha46cnz2UqrneGECmFBg"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "https://special-radial-slug.solana-devnet.quiknode.pro/6a226d3d77caa81d31c4cc180c4a2f78d4e922b7/"
+wallet = "/Users/chaz/.config/solana/id.json"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
